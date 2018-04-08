@@ -4,7 +4,7 @@ public class Main
 {
     public static void main(String[] args)
     {
-        String dir = "c:\\Users\\User\\IdeaProjects\\BD\\";
+        String dir = "c:\\Users\\Dima\\Documents\\BD\\";
 
         if(CheckedDB.checked(dir)) DeleteDB.delete(dir);
         CreateBD createBD = new CreateBD(dir);

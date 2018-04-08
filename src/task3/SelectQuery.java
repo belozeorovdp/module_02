@@ -16,13 +16,11 @@ public class SelectQuery
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + nameBD, "root", "dima");
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery(query);
-            // System.out.println("rs = " + rs);
             int columns = rs.getMetaData().getColumnCount();
-            //
-            // int s = rs.getFetchSize();
-            // System.out.println("columns = " + columns);
-//            int r = rs.getRow();
-//            if (r ==0)  System.out.println("Не найдено.");
+            if (!rs.isBeforeFirst())
+            {
+                System.out.println("No data");
+            }
             while(rs.next())
             {
                 for (int i = 1; i <= columns; i++)
@@ -31,7 +29,6 @@ public class SelectQuery
                 }
                 System.out.println();
             }
-
             System.out.println();
             rs.close();
             statement.close();
