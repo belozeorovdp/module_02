@@ -11,7 +11,6 @@ public class Bamm extends Thread
     public void run()
     {
         int numberS = 2000;
-
         while(true)
         {
             if(!Thread.interrupted())	// Проверка прерывания
@@ -29,6 +28,7 @@ public class Bamm extends Thread
                 if (!index)
                 {
                     interrupt();
+                    System.out.println("Вы проиграли.");
                 }
             }
             catch(InterruptedException e)

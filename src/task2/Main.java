@@ -14,15 +14,19 @@ public class Main
 
         while(bamm.isAlive())
         {
+            System.out.println("Input text:");
             str = scan.nextLine();
-            if (str.equals("") || str == null) {
+            if (str.equals("") || str == null)
+            {
                 bamm.word(true);
-            } else {
+            }
+            else
+            {
                 bamm.word(false);
             }
         }
         scan.close();
-        System.out.println("Вы проиграли");
+        System.exit(0);
 
     }
 }
